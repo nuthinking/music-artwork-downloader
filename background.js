@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.action.onClicked.addListener((tab) => {
   const songTitle = tab.title.split('-')[0].trim().replace("'", '');
-  console.log('song title: ' + songTitle);
+  console.log(`song title: "${songTitle}"`);
   chrome.tabs.executeScript(tab.id, {
     code: `console.log('start artwork downloader');
 const picture = document.querySelector('picture');
